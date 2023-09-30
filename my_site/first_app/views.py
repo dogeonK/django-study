@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseNotFound
 
 articles = {
     'sports' : 'Sports Page',
@@ -12,4 +12,10 @@ def simple_view(request):
     return HttpResponse("Simple View")
 
 def news_view(request, topic):
-    return HttpResponse(articles[topic])
+    try:
+        result = articles[topic]
+        return HttpResponse(articles[topic])
+    except:
+        result = 'No page for that topic!'
+        raise Http404("404 GENERIC ERROR")
+        # return HttpResponseNotFound(result)
