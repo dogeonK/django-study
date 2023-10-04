@@ -10,7 +10,7 @@ articles = {
 
 # Create your views here.
 def simple_view(request):
-    return HttpResponse("Simple View")
+    return render(request, 'first_app/example.html')
 
 def news_view(request, topic):
     try:
