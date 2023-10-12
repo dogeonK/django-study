@@ -17,5 +17,17 @@
     {% for item in some_list %}
         <h1>{{item}}</h1>
     {% endfor %}
+
+    {% if user_logged_in %}
+    <h1>Welcome back you are logged in</h1>
+    {% endif %}
+
+    {% for num in some_list %}
+        {% if num == 2 %}
+            <h2>two</h2>
+        {% else %}
+            <h2>{{num}}</h2>    
+        {% endif %}
+    {% endfor %}
 </body>
 </html>
