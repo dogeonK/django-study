@@ -6,4 +6,4 @@ def home_view(request):
 
 def my_custom_page_not_found_view(request, exception):
     
-    return render(request, 'error_view.html', status=404)
+    return render(request, '404.html', status=404)
